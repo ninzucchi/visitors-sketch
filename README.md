@@ -24,7 +24,7 @@ The world can never have enough sadistic dating apps. In this workshop, that’l
 
 ## Toolbar
 
-![toolbar](https://raw.github.com/ninzucchi/visitors-cambridge/master/img/toolbar.png)
+![toolbar](img/toolbar.png)
 
 The toolbar contains helpful icons represening basic operations. This area is mostly a crutch for beginner usability. As you begin master keyboard shortcuts its utility will steadily decrease. I really use mine only for boolean operations and mirroring.
 
