@@ -4,18 +4,18 @@
 
 ### Prerequisite software installs:
 
-[**Sketch 3.2.2 Demo**](http://bohemiancoding.com/sketch/)
-[Optional / **Sketch Mirror**](https://itunes.apple.com/us/app/sketch-mirror/id677296955?mt=8)
+[**Sketch 3.2.2 Demo**](http://bohemiancoding.com/sketch/) 
+[Optional / **Sketch Mirror**](https://itunes.apple.com/us/app/sketch-mirror/id677296955?mt=8) 
 
 In retrospect Sketch is a tremendously obvious product. Digital designers had no tool for designing digital products. Before Sketch, our best tools were Photoshop and Illustrator. Both are burdened by years of cruft; hundreds of distracting features useful only for photos and print. Sketch distinguished itself by being entirely focused on UI.
 
 Because if this tremendous focus, Sketch is easy to learn and has sparked a revolution in digital design. Some shining features: 
 
 - **Vector-Based** : Vector assets make exporting to multiple devices is a breeze. 
-- **Pixel Snap/Zoom** : Be confident designs on desktop will look exactly the same on a device.
-- **Mirror** : A built-in iPhone previewing makes for a hyper-efficient tweaking.
-- **Text Rendering** : 100% accurate rendering across retina screens and sub-pixel aliased devices.
-- **Rapid Exports** : No more bullshit file renaming. Set names once and use a single shortcut to render out.
+- **Pixel Snap/Zoom** : Be confident designs on desktop will look exactly the same on a device. 
+- **Mirror** : A built-in iPhone previewing makes for a hyper-efficient tweaking. 
+- **Text Rendering** : 100% accurate rendering across retina screens and sub-pixel aliased devices. 
+- **Rapid Exports** : No more bullshit file renaming. Set names once and use a single shortcut to render out. 
 
 In this tutorial we’ll learn Sketch by crafting a slightly twisted Mobile dating app: Chase. Ready? Let’s begin.
 
