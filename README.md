@@ -133,15 +133,31 @@ So far so good. We’ll now use a **Subtract** operation to remove that square r
 
 # Images
 
-At this point we’ve got a nice, 
+At this point we’ve got a nice, simple foundation on which to build. If this app is to succeed, we need bold imagery. Let’s liven up our background with a hot cityscape.
 
-## Principles
-Images drop onto the canvas just like shapes. They also have all the same properties, such as fill and stroke. Images are embedded into the file; there is currently no way to live link to external files. If you need to update an image asset, Layer > Image > Replace… is a helpful command to know.
+Check out your assets folder, and drag **city.jpg** onto the canvas.
 
-Any selection can be flattened into an image. If heavily stacked, dynamic blurred backgrounds or deeply layered interface can cause a loss of performance, especially if present on many art boards. Pages can help, and flattening layers is another powerful weapon.
+## Basics
+Images function just like Rectangles. They even have all the same properties, including Fill. Sketch embeds images into the file; there is no way to link externally. To update images after importing, **Layer > Image > Replace…** is your best option.
 
 ## Masks
-In Sketch, any layer can serve as a mask for other layers/folders at the same level of hierarchy. To turn a layer into a mask, right click its title in the Layers List and select ‘Use as Mask.’ All layers that are both above the mask and within its  same container will now be clipped by this shape. Masks can’t apply outside their current folder, so use folders wisely to keep things in check. Alpha Masks are also available through Layer > Mask Mode > Alpha Mask.
+Position your image within your artboard. We’ll now use a mask for extra style. Create a rectangle and size it to fill the whole Artboard, minus about 10 pixels from each edge.
+
+![Image Placement](img/city-placed.png)
+
+In Sketch, any layer can serve as a mask for any number of other layers. Masks always go below the content they clip, so drag your Rectangle just below your Image in the Layers List. Now turn the Rectangle into a mask by **[Cmd + Clicking]** its name in the Layers List and choosing **Use as Mask**. 
+
+![Masking](img/mask.png)
+
+All layers that are *both* above the mask *and* within its container will be clipped. Use folders to isolate masks and control their effects. Group our Mask and Image together by selecting both in the Layers List and choosing **Arrange > Group Layers** [Cmd + G]. Also drag it down to just above our Background Rectangle.
+
+## Advanced Masking
+
+Sketch is adept at both Shape and Alpha Masks. A subtle fade will help create just the right mood. To change or mask mode, select the Mask and choose **Layer > Mask Mode > Alpha Mask**.
+
+![Masking](img/alpha-mask.png)
+
+Alpha masks reveal clipped content based upon the Alpha of their fill. Make sure your mask has gradient fill, and that one of the gradient control points has an alpha < 0. Swizzeet.
 
 # Reusability
 
@@ -163,21 +179,23 @@ Even if you’re not planning to reuse a given style, it can be helpful to keep 
 
 The team had to rethink about how Symbols could be designed in the context of Sketch. As I was using it during the beta, I was amazed; it works effectively across Artboards. You don’t need to go back and edit re-used headers, footers and buttons anymore. They just update on the fly and at a fantastic performance.
 
-# Exporting
+# Workflow
+
+## Exporting
 In order to make any art board, layer, or group exportable simply select it and click ‘Make Exportable’ in the inspector. This reveals a button to export that particular item, and also makes the item appear in the popup resulting from File > Export… Exported Layers are named with their layer names within Sketch, so be sure to keep that shit tight! 
 
-## Drag n Drop
+### Drag n Drop
 Sketch allows for simply dragging art boards outside the app window to export. Multiple Artboards work the same. Select multiple to see their previews render in the inspector, ready to be dragged out for a quick export.
 
-## Slices
+### Slices
 Sketch also supports good old fashioned slices. A slice is an invisible rectangle that, when exported, renders all pixels contained within. Slices always appear in the File > Export… menu.
 
-## Batching
+### Batching
 The most powerful and useful way to export layers is using File > Export… This popup contains line items for every dartboard, slice, and/or layer marked as ‘Exportable.’ Exported layers automatically overwrite older versions, making this an incredibly painless flow. Memorize ‘Cmd + Shift + E’ and reap untold benefits. 
 
 Any exportable object can be programmed to export at multiple resolutions. Just put a multiplier (e.g. 1x, 2x, 3x) pixel size (e.g. 700h, 300w) or pixel density (e.g. 150dpi, 300dpi) in the ‘Size’ input of the selected object.
 
-## CSS Styles
+### CSS Styles
 This feature is especially useful for getting the colors, border-radius, fonts and gradient properties. As a coder, I always suggest that you code manually in order to give yourself the flexibility to change things and make them adaptable to different browsers / devices.
 
 # Mirroring
