@@ -2,13 +2,14 @@
 
 ## *Lovingly taught by one Nicholas W. Inzucchi*
 
-Prerequisite software installs:
+### Prerequisite software installs:
 
-[Sketch 3.2.2 Demo](http://bohemiancoding.com/sketch/)
+[**Sketch 3.2.2 Demo**](http://bohemiancoding.com/sketch/)
+[Optional / **Sketch Mirror**](https://itunes.apple.com/us/app/sketch-mirror/id677296955?mt=8)
 
-Sketch emerged to fill what was, in retrospect, a tremendously obvious need: Digital designers need a digital tool to design digital tools. Sketch entirely focused on UI design. The competitors it disrupts, namely Photoshop and Illustrator, were burdened by years of cruft; hundreds of features and settings for photos and print that distract from our core purpose.
+In retrospect Sketch is a tremendously obvious product. Digital designers had no tool for designing digital products. Before Sketch, our best tools were Photoshop and Illustrator. Both are burdened by years of cruft; hundreds of distracting features useful only for photos and print. Sketch distinguished itself by being entirely focused on UI.
 
-Because if its tremendous focus, Sketch has quickly sparked a revolution in digital design. For starters: 
+Because if this tremendous focus, Sketch is easy to learn and has sparked a revolution in digital design. Some shining features: 
 
 - **Vector-Based** : Vector assets make exporting to multiple devices is a breeze. 
 - **Pixel Snap/Zoom** : Be confident designs on desktop will look exactly the same on a device.
@@ -16,77 +17,123 @@ Because if its tremendous focus, Sketch has quickly sparked a revolution in digi
 - **Text Rendering** : 100% accurate rendering across retina screens and sub-pixel aliased devices.
 - **Rapid Exports** : No more bullshit file renaming. Set names once and use a single shortcut to render out.
 
-Ready? Let’s begin.
-
-The world can never have enough sadistic dating apps. In this workshop, that’ll be our goal.
+In this tutorial we’ll learn Sketch by crafting a slightly twisted Mobile dating app: Chase. Ready? Let’s begin.
 
 # Basic Interface
 
+![The Interface](img/interface.png)
+
+Before diving into our app, let’s take a 50,000 foot view of the Sketch work environment.
+
 ## Toolbar
+The toolbar contains icons that represent basic operations. This area is mostly a crutch for beginners. As you master keyboard shortcuts, its utility will steadily decrease. I now use mine only for boolean operations and mirroring.
 
-![toolbar](img/toolbar.png)
-
-The toolbar contains helpful icons represening basic operations. This area is mostly a crutch for beginner usability. As you begin master keyboard shortcuts its utility will steadily decrease. I really use mine only for boolean operations and mirroring.
+Speaking of keyboard shortcuts, here’s a [stellar reference](http://sketchshortcuts.com/). I’ll try to enclose shortcuts in brackets [Like Such] throughout the text below.
 
 ## Layers List
-The Layers list shows, as you might guess, a list of layers on the current page. Remember how much memory Illustrator or Photoshop hog? Pages are Sketch’s attempt at a fix. Use them to split huge files into multiple pieces and keep performance consistently high.
+In Sketch, everything is a **Layer**. Unlike Photoshop, every Shape, Image, Group and Text Block acquires the same uniform status. Layers are therefore our basic building blocks. The Layers List shows all Layers contained within the current page.
+
+There’s a level of hierarchy above what’s seen in the Layers List, and that level consists of Pages. Pages are like separate Sketch files, but within the same Sketch file. Why would you want that? Well, graphics problems hog a TON of memory. Memory helps them resolve overlaps, calculate blends, combine transparent effects, and still redraw quickly. Sketch uses Pages to speed things up with massive files in play. Use them to split huge documents into logical parts. Not only will performance remain high, but your sanity will benefit as well.
 
 ## Inspector
-If you’ve used keynote, you’re likely familiar with the inspector. It shows the properties and attributes of the currently selected object. *Note to Adobe Converts : Sketch has no concept of a Select tool so you can stop pressing ‘v’ all the time. Instead, use ‘esc’ to return to a normal cursor.*
+If you’ve ever use iWork (e.g. Keynote, Pages, Numbers), you’re already familiar with inspectors. The Inspector shows all properties of the currently selected object.
 
-# Art boards
+## Converting from Adobe
+Welcome! In time, I’m sure you’ll love Sketch. Here are some common hang-ups to help ease your transition:
 
-Fire up Sketch and the first thing you’ll see is a blank, infinite canvas. You can work here just fine, but pretty quickly  you’ll see a need to keep things organized. To do that, you’ll need an art board. Art boards are the skeleton of your app, and you’ll need one per screen.
+- **No Select Tool** : Sketch has no concept of a Selection Tool, per se. That means you can stop pressing [v] all the time! By default, your cursor is a selector. Every other draw operation is a temporary state that resets when the operation completes. Use [esc] instead of [v] to return to this smart default.
+- **No Point Select Tool** : Sketch has no concept of a Direct Selection Tool. That means you can stop pressing [a] all the time! To edit curve points, just double click on the shape. This enters edit mode. To return press [esc]
+- **Deep Select** : By default clicking on a shape selects the top-most folder. Cut through the hierarchy by holding ‘cmd’ as you click. This will select the bottom-most object.
 
-To create an art board press (A). The inspector updates to show several common sizing options. Rejoice, no more Googling screen resolutions! Let’s select **iPhone Portrait**.
+# Artboards
 
-Nice. Art boards can be selected in the Layers List, or by clicking their name on the canvas. Go ahead and select the current art board.
+![Adding an Artboard](img/artboard.png)
 
-# Layers
+Sketch greets you with a blank, infinite canvas. You can work here just fine, but pretty soon you’ll see some structure. Art boards form the basic structure of your app. They provide a top level of hierarchy and make exporting simple. Use one per screen.
 
-Everything in Sketch is a layer. These are its basic building blocks. Every shape, object, and piece of type is treated identically: as a Layer.
+Let’s create an art board for our splash screen by with **Insert > Artboard** [a]. The inspector updates to show several common sizes *(No more Googling screen resolutions!),* Go ahead and select **iPhone Portrait**.
 
-## Basic Shapes
+An artboard can be selected in the Layers List, or by clicking its name on the canvas. Feel free to select the current artboard and check out its properties in the Inspector. 
 
-To add a new layer, click the Insert icon in the toolbar. Our app needs a little header, so let’s add a Rectangle. Drag anywhere on the art board to create your Rectangle, then check out the inspector.
+While we’re poking around, try double clicking on the artboard’s name in the Layers List. Rename it to ‘Splash’ like a |30$$.
 
-### Editing Properties
+# Shapes
 
-Every layer in Sketch has the same set of basic properties: Position, Size and Transform. Type directly in these boxes to set your header’s position to (0,0) and its size to a slim (640,15).
+![Adding a Rectangle](img/rectangle-before.png)
 
-One of Sketch’s most useful features is the ability to use algebra in inspector fields. In the upcoming beta, you can even use percentages. Use this feature to keep get your anal-retentive rocks off.
+Our splash screen needs a background, so a **Rectangle** is in order. Add a rectangle with **Insert > Shape > Rectangle** [R]. Drag anywhere on the art board to create your Rectangle, then check out the inspector.
 
-### Color
-Every layer also has appearance properties. These include opacity, blend mode, fills, borders, shadows, and blur. Let’s begin with color. Click the color swatch in your header’s ‘Fills’ field. 
+## Transforming
 
-Sketch’s color selector is pretty great. Consistent with the digital-first mindset, it accepts Hex codes and uses HSLA by default. Sketch automatically detects the colors present in your current design and adds them to the first row of swatches. If that’s not enough, you can always add the current color to the second row of swatches by pressing ‘+’.
+![Transforming a Rectangle](img/transform.png)
 
-Select something nice and bright, then deselect the Rectangle by clicking anywhere else within the canvas.
+All Layers have a set of common transformation properties: Position, Size and Rotation. Type directly in these boxes to set your rectangle’s position to [0,0] and its size to that of our artboard (640,1135).
 
-Similar to colors, the typefaces that are used in your current design will be automatically detected.
+**Pro-Tip**: *Adjust any value by clicking once within it, then hitting [**up / down**]. **[Shift + up / Shift + down]** adjusts in increments of 10. You can also use algebra in these fields (e.g. 1024/8). The next version of Sketch will also add support for percentages.*
 
-## Guides
-Our interface needs a nice background, so let’s create another rectangle. This time, use the (R) shortcut key to equip the Rectangle tool. We’ll use guides to draw the perfect shape. Begin drawing near the dartboard’s top-left corner, drag to the bottom-right, and release. As you drag, your cursor will snap to nearby edges. This feature makes it quite efficient to draw by hand.
+## Styling
 
-## Layer Manipulation
-Our new rectangle is on top of the layer stack, and that’s no good. In the Layer List, drag its name to the bottom of the list. 
+All Layers also have common appearance properties: Opacity, Blending, Fills, Borders, Shadows, and Blur. Our app demands a dark background to fit its mysterious mood. Click the **color swatch** in your rectangle’s ‘Fills’ field. 
 
-While we’re here, let’s do some renaming. Double click on the art board name, ‘Portrait,’ and rename it to ‘Home.’ Before you confirm, try pressing Tab to automatically jump to the next title. Rename your remaining layers this way.
+![Styling a Rectangle](img/color.png)
 
-### Advanced Color
-That background would look great with a subtle dark gradient. Click its fill swatch and select the Linear Gradient tab/icon at the top of the popup. I won’t attempt to explain how to build a gradient in words, but take a stab at something dark & sexy.
+This color selector is pretty great. Digital first, it accepts Hex codes and uses HSLA by default. 
 
-FYI there are also fill tabs for Radial Gradients, Angular Gradients, Patterns and Noise fills.
+Below the selector are two rows of swatches. The first row is for colors Sketch automatically detects as present in your design. The second row is for custom swatches; add a new one by pressing the [+] button. Go ahead and select a dark, moody color.
 
-## Paths
-Let’s make a quick ‘close’ icon to begin working with Paths. Press ‘L’ to enter the line tool. Hold shift and draw a line at 45 degrees. Change the line’s stroke color to white, and give it rounded end caps. Now Duplicate that shape and press ‘flip horizontal’. This produces an X.
+Gradients are also available for advanced students to tinker with. They come in Linear, Radial and Angular flavors. Patterns and Noise fills are really just for showing off.
 
-Strokes can be converted to shapes with the ‘Vectorize Stroke’ command. Let’s use this now to make a proper icon. Vectorize both lines to convert them to real shapes.
+## Advanced Transforming
 
-## Boolean Operations
-After converting both lines, we’ll want to combine them into a single shape. Sketch’s Boolean operations provide a perfect utility for this purpose. Select both lines then Layer > Combine > Union. This merges both shapes into a single form. In the Layer List, the source shapes appear nested together as if in a folder. Rest assured, they are combined. This merely allows us to edit the source components directly if necessary.   
+![Drawing a Circle](img/circle.png)
+
+Dating is about finding that special someone, so naturally a reticle shall be our logo. Let’s start with a circle. Create one using **Insert > Shape > Oval** [O] and set its dimensions to (78x78). Give it a simple white border and remove its fill by unchecking the box next to its default swatch.
+
+**Pro-Tip**: *Delete unused style attributes by clicking the trash icon in the header. This helps keep files nice and clean.*
+
+### Smart Guides
+
+![Positioning a Circle](img/guides.png)
+
+We’ll use **Smart Guides** to position our circle in the exact center of our artboard. Click and drag the circle toward the center of the artboard. Red guides will help lead you to the center. By default Sketch also snaps to points, edges, and alignment points (e.g. top, center, bottom) of nearby objects.
+
+### Measuring
+
+![Distancing a Circle](img/distances.png)
+
+Just to be sure we got it perfect, select the circle and hold down [Alt]. Sketch will show you the distance to surrounding artboard edges. 
+
+All good? Total perfectionists should feel free to employ **View > Show Rulers** [Ctrl + R]
+
+### Aligning
+
+![Alignment](img/align.png)
+
+Create one more rectangle anywhere on screen, and make it (2x78). This will be one crosshair on our reticle. This time we’ll use Sketch’s **Alignment** tools to position things correctly. Select the rectangle and **Arrange > Align Objects > Horizontally** then **Arrange > Align Objects > Vertically** (You can also complete both operations in the Inspector).
+
+### Rotating
+
+A reticle needs two crosshairs, though. Duplicate our first rectangle using **Edit > Duplicate** [Cmd + D], then rotate it 90° using the inspector. Boom, trus me daddy.
+
+## Advanced Drawing
+
+### Boolean Operations
+
+Unless you can see your target, a reticle just gets in the way. We’ll need to cut out a square area between those two lines, but how? The answer is Boolean.
+
+First let’s join both rectangles into a single shape. Select both by holding [Shift] or [Cmd] as you click them in sequence. Now use **Layer > Combine > Union** to fold them into a single shape. In the Layer List, both rectangles appear nested as if in a folder. This presentation allows us to easily edit source components if necessary.
+
+![Union](img/union.png)
+
+Second, let’s draw a square to mark the area we want removed. Pixel Zoom is the secret sauce here. Pinch to zoom way in until each pixel is outlined. Draw a (2x2) Rectangle right there in the center.
+
+![Subtraction](img/subtraction.png)
+
+So far so good. We’ll now use a **Subtract** operation to remove that square region from our crosshairs. In the layer list, select both the square and crosshairs. Now use **Layer > Combine > Subtract** to perform the subtraction. Shab-Shab-Shabba Ranks.
 
 # Images
+
+At this point we’ve got a nice, 
 
 ## Principles
 Images drop onto the canvas just like shapes. They also have all the same properties, such as fill and stroke. Images are embedded into the file; there is currently no way to live link to external files. If you need to update an image asset, Layer > Image > Replace… is a helpful command to know.
