@@ -5,7 +5,7 @@
 ### Prerequisite software installs:
 
 [**Sketch 3.2.2 Demo**](http://bohemiancoding.com/sketch/) 
-[Optional / **Sketch Mirror**](https://itunes.apple.com/us/app/sketch-mirror/id677296955?mt=8) 
+[**Sketch Mirror** (Optional)](https://itunes.apple.com/us/app/sketch-mirror/id677296955?mt=8) 
 
 In retrospect Sketch is a tremendously obvious product. Digital designers had no tool for designing digital products. Before Sketch, our best tools were Photoshop and Illustrator. Both are burdened by years of cruft; hundreds of distracting features useful only for photos and print. Sketch distinguished itself by being entirely focused on UI.
 
@@ -161,54 +161,104 @@ Alpha masks reveal clipped content based upon the Alpha of their fill. Make sure
 
 # Reusability
 
-Is the shit!
+Sketch has several BADASS features to eliminate tedium from the day-to-day of UI design. Many of these revolve around reusability. Let’s play with a few as we make our way deeper into dating.
 
 ## Shared Styles
 
-Shared styles allow you to effortlessly share a single set of physical attributes across many shapes. A Shared Style saves information in all of the inspector fields below the ’Shared Style’ dropdown, namely Fill, Border, Shadow, Inner Shadow, Blur, and Color Adjust.
+Shared styles allow many Layers to share a single set of physical attributes. Shared Styles collect Fill, Border, Shadow, Inner Shadow, Blur, and Color Adjust.
 
-Let’s use Shared Styles to unite our iconography. First select the ‘X’ icon. In the inspector, open the Shared Style dropdown and choose ‘Create New Shared Style.’ Give it a name and press Enter. Now, with the Heart icon selected, choose the Shared Style you created. Done! To make sure things worked as planned, change the Heart’s fill to pink. The ‘X’ should update immediately.   
+Our app needs a Log In feature. Let’s use Shared Styles to make sure we maintain a unified visual language. First, select the Rectangle behind our app title. Click on the words ‘No Shared Style’ within the Inspector, then select ‘Create New Shared Style.’ Give it a name and press return. 
+
+![Shared Style](img/shared-style.png)
+
+We can now apply that style to any shape. Make a new rectangle near the bottom of the screen; this will be our Login path. Select it, and choose your Style from the dropdown. Donezo — The styles are now linked.
 
 ## Text Styles
 
 Text Styles work just like Shared Styles. In addition to the physical attributes of Shared Styles, Text styles also store typographic information like Font and Paragraph settings.
 
-Even if you’re not planning to reuse a given style, it can be helpful to keep them cataloged. Fewer is better, after all. Let’s give Text Styles to all of the type we’ve employed so far.
+Let’s use text styles to finish our new Login button, ensuring we keep a clean typographic slate. First, select the title of our app. Click on the words ‘No Text Style’ within the Inspector, then select ‘Create New Text Style.’ Give it a name and press return.
+
+![Text Style](img/text-style.png)
+
+Now add a new text block with **Insert > Text** [t]. This microcopy should invite users to get started. Once done writing, hit [esc]. The text box should remain selected. Now select your new Text Style from the dropdown. Shazam — The styles are now linked.
 
 ## Symbols
 
-The team had to rethink about how Symbols could be designed in the context of Sketch. As I was using it during the beta, I was amazed; it works effectively across Artboards. You don’t need to go back and edit re-used headers, footers and buttons anymore. They just update on the fly and at a fantastic performance.
+Symbols let you reuse groups of content easily across pages and artboards. In reality, a Symbol is nothing than a special kind of group. It even looks like group the Layer List, but is purple instead of blue.
 
-# Workflow
+It would be great if our splash screen was interactive. That way, users could learn about the app even if they’re hesitant to log in or sign up. A carousel seems natural, meaning we’ll need some dots to indicate position. All dots will be identical, so this is an ideal time to use a Symbol. 
 
-## Exporting
-In order to make any art board, layer, or group exportable simply select it and click ‘Make Exportable’ in the inspector. This reveals a button to export that particular item, and also makes the item appear in the popup resulting from File > Export… Exported Layers are named with their layer names within Sketch, so be sure to keep that shit tight! 
+### Creating Symbols
 
-### Drag n Drop
-Sketch allows for simply dragging art boards outside the app window to export. Multiple Artboards work the same. Select multiple to see their previews render in the inspector, ready to be dragged out for a quick export.
+![Symbols](img/symbols-start.png)
 
-### Slices
-Sketch also supports good old fashioned slices. A slice is an invisible rectangle that, when exported, renders all pixels contained within. Slices always appear in the File > Export… menu.
+Create an (18x18) circle. Select it and choose **Layer > Create  Symbol**. The shape layer will be grouped within a purple Symbol folder. Duplicate [Cmd + D] the Symbol 3 times to create more dots. Align them vertically, distribute horizontally, and center the group within the Artboard.
 
-### Batching
-The most powerful and useful way to export layers is using File > Export… This popup contains line items for every dartboard, slice, and/or layer marked as ‘Exportable.’ Exported layers automatically overwrite older versions, making this an incredibly painless flow. Memorize ‘Cmd + Shift + E’ and reap untold benefits. 
+### Editing Symbols
 
-Any exportable object can be programmed to export at multiple resolutions. Just put a multiplier (e.g. 1x, 2x, 3x) pixel size (e.g. 700h, 300w) or pixel density (e.g. 150dpi, 300dpi) in the ‘Size’ input of the selected object.
+![Symbols](img/symbols-end.png)
 
-### CSS Styles
-This feature is especially useful for getting the colors, border-radius, fonts and gradient properties. As a coder, I always suggest that you code manually in order to give yourself the flexibility to change things and make them adaptable to different browsers / devices.
+That’s a decent start, but they look a little big. We wouldn’t want to detract too much attention from the call to action. Deep-select one of the circles by holding [Cmd] and clicking right on it. Scale it down to (14x14), then press [3] to drop its opacity to 30%. See how all the other circles changed as well? Now you’re rocking with symbols.
 
-# Mirroring
+### Detaching Symbols
 
-Sketch can mirror natively to any iOS device, it’s dope! 
+![Symbols](img/symbols-detach.png)
 
-# Pro Tips
+If we’re on the first page of our walkthrough, the first progress dot should illuminate. However because this dot is attached to a symbol, any changes will be reflected in all others. We’ll need to detach it from the Symbol. 
+
+Select the first dot on the Canvas or Layer List. Be sure to select the Symbol and not just the Shape within it. In the inspector, click the Symbol’s current name and select **Duplicate Symbol**. Let’s call this new symbol ‘Active Dot’; we’ll likely want to reuse it on subsequent screens. Now you can bump the dot’s opacity up to 100% without fear of affecting anything else.
+
+# Exporting
+
+Because it’s designed for digital, Sketch assumes you’ll want to export assets separately and frequently. This can be accomplished in two main ways: Direct Export & Batch Export. 
+
+## Direct Exporting
+To get our Artboard out of Sketch, we first need to make it Exportable. Select it, then click **Make Exportable** at the very bottom the inspector. 
+
+![Export Inspector](img/export-inspector.png)
+
+This reveals a set of export options to the inspector. The ‘Size’ field is especially notable. It accepts multipliers (e.g. 1x, 2x, 3x) pixel sizes (e.g. 700h, 300w) and even pixel densities (e.g. 150dpi, 300dpi).
+
+![Export Dragging](img/export-drag.png)
+
+From here, there are two ways to directly export the selected artboard. The first is to drag the small preview anywhere outside the Sketch app. The second is to click **Export [Layer Name]** at the bottom of the inspector.
+
+## Batching
+Exporting artboards is great for quick communication, but our developer needs separate layers to begin prototyping. To satisfy her, we’ll use batch exporting.
+
+![Export Batch](img/export-batch.png)
+
+Go through the Layer List and tag the Background, Logo, Progress Dots, and Login Button as exportable. Now select **File > Export…** [Cmd + Shift + E]. The resulting popup shows line items for each exportable layer. Simply hit **Export** and choose a location. Since exported layers automatically overwrite older versions, this feature makes asset updating incredibly painless. 
+
+## CSS Styles
+
+![Export CSS](img/export-css.png)
+
+After seeing our design, our developer would rather code the login button in straight HTML. Luckily, Sketch supports one-click exporting of CSS styles. Right click on your button’s background rectangle and select **Copy CSS Attributes**. Your clipboard should now contain the following:  
+
+``/* Background: */
+opacity: 0.3;
+background: #000000;
+border: 2px solid #FFFFFF;
+box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50);
+border-radius: 3px;``
+
+# Other Dope Features
+
+## Opacity Keys
+
+When you select a Layer or a Group and press the 1 key, it’ll set it to 10% opacity.
 
 ## Presentation Mode
 
 A fantastic way to present your UI to your co-workers without the noises. Just press Command + .
 
-## iCloud Versions
+## Mirroring
+
+Sketch can mirror natively to any iOS device, it’s dope! 
+
+## iCloud Versioning
 
 Sketch has Autosave enabled. It keeps the versioning of your files, so you no longer run into the problem of having to save files manually or risk losing edits. To restore an old version, go to File / Revert To / Browse All Versions.
 
@@ -216,6 +266,6 @@ Sketch has Autosave enabled. It keeps the versioning of your files, so you no lo
 
 If you love layout grids such as the 960grid, then you’re in luck. Sketch has a fantastic Grid feature. You can create virtually any grid you’d like. This is particularly helpful for the Web.
 
-## Opacity Keys
+## Plugins
 
-When you select a Layer or a Group and press the 1 key, it’ll set it to 10% opacity.
+Some favorites include Sketch Mate, Renameit, and Swap Fill Border.
